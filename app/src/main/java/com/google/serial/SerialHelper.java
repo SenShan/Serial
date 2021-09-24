@@ -9,8 +9,6 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * 串口辅助工具类
- *
- * @author zhaosenshan
  */
 public class SerialHelper {
 

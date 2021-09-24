@@ -10,7 +10,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * @author zhaosenshan
  */
 public class SerialPort {
 

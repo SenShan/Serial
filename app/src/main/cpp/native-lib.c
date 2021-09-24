@@ -10,7 +10,6 @@
 #include "android/log.h"
 
 static const char *TAG = "serial_port";
-#define LOGI(fmt, args...) __android_log_print(ANDROID_LOG_INFO,  TAG, fmt, ##args)
 #define LOGD(fmt, args...) __android_log_print(ANDROID_LOG_DEBUG, TAG, fmt, ##args)
 #define LOGE(fmt, args...) __android_log_print(ANDROID_LOG_ERROR, TAG, fmt, ##args)
 int fd;
@@ -177,7 +176,7 @@ int set_opt(jint nBits, jchar nEvent, jint nStop, jint speed) {
  * Method:    open
  * Signature: (Ljava/lang/String;II)Ljava/io/FileDescriptor;
  */
-JNIEXPORT jobject JNICALL Java_com_google_serial_serialport_SerialPort_open(JNIEnv *env, jclass thiz, jstring path, jint baudrate,
+JNIEXPORT jobject JNICALL Java_com_google_serial_SerialPort_open(JNIEnv *env, jclass thiz, jstring path, jint baudrate,
          jint databits, jint stopbits, jchar parity) {
 
     speed_t speed;
@@ -299,7 +298,7 @@ JNIEXPORT jobject JNICALL Java_com_google_serial_serialport_SerialPort_open(JNIE
  * Signature: ()V
  */
 JNIEXPORT void JNICALL
-Java_com_google_serial_serialport_SerialPort_close(JNIEnv *env, jobject thiz) {
+Java_com_google_serial_SerialPort_close(JNIEnv *env, jobject thiz) {
     jclass SerialPortClass = (*env)->GetObjectClass(env, thiz);
     jclass FileDescriptorClass = (*env)->FindClass(env, "java/io/FileDescriptor");
 

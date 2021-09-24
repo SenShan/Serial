@@ -2,7 +2,6 @@ package com.google.serial;
 
 /**
  *
- * @author neo
  */
 class ComBean {
 
